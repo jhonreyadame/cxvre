@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CXVRE</title>
+    <meta name="description" content="CXVRE Landing Page">
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #1a1a1a;
+            --accent-color: #555;
+            --link-color: #000;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0a0a0a;
+                --text-color: #ededed;
+                --accent-color: #a3a3a3;
+                --link-color: #fff;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--accent-color);
+            margin-bottom: 2.5rem;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a.email-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--link-color);
+            text-decoration: none;
+            padding: 0.75rem 1.75rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+        }
+
+        a.email-link:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            border-color: var(--text-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            a.email-link:hover {
+                box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>CXVRE</h1>
+        <p>For inquiries, questions, or to get in touch, please feel free to reach out directly.</p>
+        <a href="mailto:jhonrey@cxvre.com" class="email-link">jhonrey@cxvre.com</a>
+    </main>
+</body>
+</html>
