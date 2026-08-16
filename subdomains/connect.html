@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CXVRE | Integrations Under Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Import Geist Mono and Inter from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --bg-deep: #070709;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep);
+            color: #fafafa;
+        }
+
+        .font-geist {
+            font-family: 'Geist Mono', monospace;
+        }
+
+        /* Geometric Grid Texture */
+        .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), 
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Entrance Animations */
+        .fade-in {
+            animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        .delay-1 { animation-delay: 0.15s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.45s; }
+        .delay-4 { animation-delay: 0.6s; }
+        .delay-5 { animation-delay: 0.75s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Node Card Hover Effect */
+        .node-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .node-card:hover::before, .node-card.active-node::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden selection:bg-cyan-900/50 selection:text-cyan-50">
+
+    <!-- Ambient Backlights -->
+    <div class="fixed top-[-15%] left-[-10%] w-[50vw] h-[50vw] bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-15%] right-[-10%] w-[50vw] h-[50vw] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+    <!-- Geometric Grid Layer -->
+    <div class="fixed inset-0 z-0 pointer-events-none bg-grid opacity-70"></div>
+
+    <!-- Main Content Container -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 py-16 min-h-screen flex flex-col">
+        
+        <!-- Header & Status -->
+        <header class="w-full flex items-center justify-between mb-24 fade-in">
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#0a0a0d] border border-zinc-800/60 shadow-lg backdrop-blur-sm">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="text-xs font-geist text-zinc-300 tracking-wide uppercase">System Under Development</span>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="flex-grow flex flex-col justify-center pb-32">
+            <div class="max-w-4xl fade-in delay-1">
+                <h2 class="text-2xl md:text-3xl text-cyan-500/80 font-geist mb-6">> connect.cxvre.com_</h2>
+                <h1 class="text-6xl sm:text-7xl md:text-8xl font-light tracking-[0.02em] text-white mb-10 leading-tight">
+                    Connect
+                </h1>
+                <p class="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-3xl border-l-2 border-zinc-800 pl-6">
+                    Collaboration tools for your team. Access project boards, live chatting, and link your internal and external projects.
+                </p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-20 pt-8 border-t border-zinc-900/80 w-full flex flex-col md:flex-row items-center justify-between gap-4 fade-in delay-4">
+            <p class="text-xs font-geist text-zinc-600 tracking-wider">
+                &copy; 2026 CXVRE Information Technology Services.
+            </p>
+            <p class="text-xs font-geist text-zinc-700 tracking-wider">
+                All rights reserved.
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
